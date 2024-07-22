@@ -11,6 +11,7 @@ body {
     grid-column: 2;
     font-weight: 400;
     line-height: 1.5;
+    font-family: serif;
 }
 nav {
     font-family: sans-serif;
