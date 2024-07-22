@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">clockworknettie</a></li>
+        </ul>
+    </nav>
+    <hgroup>
+        <h1>
+            How many broken pedestrian lights in Glasgow?
+        </h1>
+        <p class=subhead>
+            I got fed up and decided to count the number of broken pedestrian lights in the city centre
+        </p>
+</header>
+
+<article>
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio eros, ultrices a sem sit amet, maximus porta dolor. Maecenas a nulla efficitur, aliquam dolor ac, congue mi. Nulla quam massa, volutpat ac malesuada sit amet, congue in nulla. In maximus est non neque porttitor scelerisque. Sed in arcu elit. Vestibulum quis augue sed mi dignissim dignissim sit amet quis ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pellentesque erat elit. Maecenas purus turpis, hendrerit a arcu vel, gravida sagittis ante. Sed in purus consectetur, faucibus leo quis, suscipit urna. Integer aliquam, tortor accumsan venenatis viverra, lorem neque porttitor sem, sed accumsan metus nunc varius mi. Ut felis lacus, ultrices vitae turpis ac, iaculis scelerisque quam. In in dui sit amet est convallis cursus. Nulla maximus lobortis lectus, in dapibus tortor fermentum euismod. Nam a molestie tellus, nec viverra eros. In interdum pellentesque massa nec rhoncus.
+    </p>
+
+    <img src="glasgow_traffic_lights_8.png" class=zoomable />
+
+    <p>
+    Curabitur rutrum congue augue, quis viverra neque elementum eu. Sed eleifend, nisl vel commodo pretium, diam purus finibus magna, ac laoreet libero leo id neque. Morbi ante nulla, suscipit eget massa vitae, finibus gravida magna. Vivamus nec mi est. Duis tincidunt nulla varius nisl imperdiet fermentum. Aenean vulputate purus a lorem porttitor sollicitudin. Aenean sem urna, finibus sed felis id, pharetra rhoncus ligula. Curabitur maximus eros arcu. Vivamus quis nunc ac dui semper pharetra quis eget magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis ante lacus, tempor quis imperdiet quis, pellentesque id sem.
+    </p>
+
+    <p>
+    Sed luctus commodo dolor quis commodo. Duis sagittis lorem tortor, ut congue metus semper eget. Nulla facilisi. Duis maximus, nisl non efficitur accumsan, neque tortor gravida velit, at pharetra libero tellus porta ligula. Praesent sapien libero, dignissim id elementum a, consectetur at tortor. In hac habitasse platea dictumst. Pellentesque efficitur vulputate fringilla.
+    </p>
+
+    <p>
+    Pellentesque euismod suscipit ante ut placerat. Sed commodo, metus non rhoncus varius, leo justo interdum mauris, vitae tempor nisl lacus id massa. Nunc ultricies nec tortor ut fringilla. Quisque hendrerit arcu quis sapien vehicula tristique. Aliquam auctor vitae nisi et pharetra. Curabitur volutpat sem aliquet, pulvinar tellus vel, vestibulum libero. In ultricies, nisl id posuere malesuada, magna enim pharetra magna, vitae iaculis nunc ex blandit ligula. Sed euismod sapien erat, non volutpat lorem ultrices eget. Pellentesque pellentesque volutpat hendrerit. Curabitur elementum, enim egestas elementum finibus, magna enim maximus nisi, id tincidunt magna mauris non nisi. Morbi tincidunt est eros, finibus scelerisque magna semper et. Morbi purus arcu, fermentum vel mi sed, elementum venenatis elit. Integer sed dignissim libero. Proin quis arcu eget augue pellentesque commodo quis vel ex. Maecenas ut accumsan lorem.
+    </p>
+
+    <p>
+Vivamus ut ex justo. Phasellus et est metus. Nulla dui nunc, rhoncus et rutrum et, maximus sed diam. Proin ex enim, consequat eget dolor sed, sodales accumsan massa. Vestibulum orci nulla, malesuada ac massa id, dictum hendrerit orci. Cras eleifend et neque et accumsan. Donec pulvinar, ante ut sodales tincidunt, neque nibh ultrices dui, eu dictum mauris purus ac eros. Vivamus condimentum euismod turpis non tempor. Nam ut aliquam sapien, vitae pellentesque mauris. Pellentesque enim leo, euismod sit amet nulla eu, pellentesque consectetur nisl. Nam dictum, urna eu hendrerit consequat, libero risus efficitur ex, vel egestas turpis lectus ac nisl. Phasellus viverra, eros non efficitur rutrum, justo justo tristique odio, ac vehicula lorem purus id lectus. Vestibulum ut sapien non lacus porta ornare. 
+    </p>
+
+
+</article>
+
+<div id="zoom_holder" style="display:none;" onclick="this.style.display = 'none';">
+</div>
+<script>
+
+    const zoomables = document.querySelectorAll('.zoomable');
+    const zoom_holder = document.querySelector('#zoom_holder');
+    zoomables.forEach(z => {
+        z.addEventListener('click', function() {
+            zoom_holder.replaceChildren(this.cloneNode());
+            zoom_holder.style.display = 'grid';
+        });
+    });
+</script>
+</body>
+</html>
