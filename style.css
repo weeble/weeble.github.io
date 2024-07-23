@@ -51,6 +51,12 @@ h1 {
     line-height: 1.2;
 }
 
+hr {
+    border: none;
+    border-top: 0.5px solid #224;
+    margin: 3em 0;
+}
+
 .subhead {
     font-style: italic;
     font-size: 120%;
