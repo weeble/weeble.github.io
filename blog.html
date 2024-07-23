@@ -48,18 +48,40 @@ Vivamus ut ex justo. Phasellus et est metus. Nulla dui nunc, rhoncus et rutrum e
 
 </article>
 
-<div id="zoom_holder" style="display:none;" onclick="this.style.display = 'none';">
+<div id="zoom_holder" style="display:none;" onclick="history.back();">
 </div>
 <script>
 
     const zoomables = document.querySelectorAll('.zoomable');
     const zoom_holder = document.querySelector('#zoom_holder');
-    zoomables.forEach(z => {
+    const zoom = (element) => {
+        const clone = element.cloneNode();
+        clone.removeAttribute('id');
+        zoom_holder.replaceChildren(clone);
+        zoom_holder.style.display = 'grid';
+    };
+    window.addEventListener("popstate", (event) => {
+        if (event.state) {
+            if (event.state.state == 'zoomed') {
+                const element = document.getElementById(event.state.id);
+                if (element) {
+                    zoom(element);
+                }
+            } else {
+                zoom_holder.style.display = 'none';
+            }
+        }
+    });
+    zoomables.forEach((z, index) => {
+        if (!z.id) {
+            z.id = 'zoomable' + index;
+        }
         z.addEventListener('click', function() {
-            zoom_holder.replaceChildren(this.cloneNode());
-            zoom_holder.style.display = 'grid';
+            zoom(this);
+            history.pushState({'state':'zoomed','id':z.id}, "", window.location.href);
         });
     });
+    history.replaceState({'state':'unzoomed'}, "", window.location.href);
 </script>
 </body>
 </html>
