@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="style.css" />-->
+<style>
+
+/* I copied this from https://chordbug.neocities.org/darkmode/ */
+
+/* The light and dark theme color variables are defined up here: */
+
+html, html.light {
+  color-scheme: light;
+  --text: #111; 
+
+  --accent: #f80; 
+
+  --bg: #eef; 
+
+}
+html.dark {
+  color-scheme: dark;
+  --text: #dde; 
+
+  --accent: #ec0; 
+
+  --bg: #334; 
+
+}
+
+/* It sucks a little to have to define the dark colors twice, */
+/* but this makes it work even when JavaScript is disabled: */
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+    --text: #dde; 
+
+    --accent: #ec0; 
+
+    --bg: #334; 
+
+  }
+}
+
+body {
+  transition: background-color 0.2s;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+img {
+    width: 320px;
+    display: block;
+    margin: auto;
+}
+
+</style>
+<script>
+  function lget(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
+  function lset(key, value) { try { localStorage.setItem(key, value); } catch (e) {} }
+  function prefersDark() { return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches; }
+  function getTheme() { return lget("theme") || (prefersDark() ? "dark" : "light"); }
+  function setTheme(theme) { lset("theme", theme); document.querySelector("html").className = theme || getTheme(); }
+  function toggleTheme() { setTheme(getTheme() === "dark" ? "light" : "dark"); }
+  setTheme(getTheme());
+</script>
+</head>
+<body>
+    <h1>Color-scheme sensitive SVG</h1>
+    <img src="futabas.svg">
+    <button onclick="toggleTheme()">Toggle theme</button>
+</body>
+</html>
