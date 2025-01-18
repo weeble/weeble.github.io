@@ -78,6 +78,21 @@ article img {
     box-shadow: 0 0.25em 1em 0 rgba(0.4,0,0,0.15);
 }
 
+.red-truth {
+    color: #ff0000;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-shadow: 1px 1px 1px black;
+}
+
+.blue-truth {
+    color: #0088bb;
+    /* color: #5decff; Doesn't work on a light background. */
+    font-weight: bold;
+    font-family: sans-serif;
+    text-shadow: 1px 1px 1px black;
+}
+
 .subhead {
     font-style: italic;
     font-size: 120%;
