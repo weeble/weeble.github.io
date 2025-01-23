@@ -58,6 +58,13 @@ header hgroup > img {
     margin-right: 0.5em;
     float: left;
 }
+header hgroup > time {
+    margin-top: 1.5em;
+    margin-bottom: 0;
+    font-family: sans-serif;
+    font-size: 70%;
+    font-weight: 200;
+}
 img {
     width: 100%;
 }
