@@ -129,3 +129,13 @@ article img {
 /*box-shadow: 0 0 2em 0.25em rgba(0,0,0,0.25);*/
     filter: drop-shadow(0 0 2em rgba(0,0,0,0.25));
 }
+
+figure {
+    margin: 20px 20px;
+}
+
+figcaption {
+    margin-top: 5px;
+    font-size: 90%;
+    font-style: italic;
+}
