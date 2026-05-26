@@ -66,7 +66,10 @@ header hgroup > time {
     font-weight: 200;
 }
 img {
-    width: 100%;
+    max-width: 100%;
+}
+.no-grow {
+    /* width: inherit; */
 }
 h1 {
     margin-top: 1em;
@@ -82,7 +85,7 @@ hr {
 }
 
 article img {
-    box-shadow: 0 0.25em 1em 0 rgba(0.4,0,0,0.15);
+    filter: drop-shadow(0 0.25em 0.5em rgba(0.4,0,0,0.15));
 }
 
 .red-truth {
